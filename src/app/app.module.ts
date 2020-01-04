@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -31,6 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";;
 import { SingleStoryComponent } from './single-story/single-story.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
+import { SelectYourStoryComponent } from './select-your-story/select-your-story.component';
 import {
     SocialLoginModule,
     AuthServiceConfig,
@@ -59,6 +62,8 @@ export function getAuthServiceConfigs() {
         HttpClientModule,
         GooglePlaceModule,
         routing,
+        CKEditorModule,
+        InternationalPhoneNumberModule,
         SocialLoginModule,
         BsDatepickerModule.forRoot() ,
         BrowserAnimationsModule   ],
@@ -67,12 +72,14 @@ export function getAuthServiceConfigs() {
         AlertComponent,
         HomeComponent,
         LoginComponent,
+        SelectYourStoryComponent,
         RegisterComponent,
         HeaderComponent ,
         FooterComponent ,
         BlogComponent ,
         ContactComponent ,
         StoryFeedComponent,
+ 
         WriteStoryComponent,
         MyStoriesComponent,
         MyProfileComponent ,GroupsComponent , SingleStoryComponent , PagenotfoundComponent ],

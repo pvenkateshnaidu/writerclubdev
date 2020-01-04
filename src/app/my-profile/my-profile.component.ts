@@ -22,7 +22,7 @@ export class MyProfileComponent implements OnInit {
   currentUser:any;
   public getusers:any=[];
   imgURL: any;
-  new:any;
+  public new:any=[];
   loaded;
   loading=false;
   public message: string;
@@ -34,15 +34,17 @@ export class MyProfileComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.loading=true;
-     this.new= this.getById();
-    
+     this.getById();
+
+     
     this.imgURL="http://ssl.gstatic.com/accounts/ui/avatar_2x.png";
     this.myprofile = this.formBuilder.group({
       name: ['', Validators.required],
       mobile_number: ['', Validators.required],
+      dob: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
   });
-  console.log(this.getusers);
+ // console.log(this.getusers);
  
   }
   get f() { return this.myprofile.controls; }
@@ -104,12 +106,14 @@ onSubmit() {
       const formData = new FormData();
       formData.append("user_id",this.currentUser.id);
       formData.append('name', this.myprofile.get("name").value);
+     
       formData.append('email', this.myprofile.get("email").value);
       formData.append('mobile_number', this.myprofile.get("mobile_number").value);
       formData.append('file', this.filedatanew);
      
       this.imageService.uploadImage(formData).subscribe(
         (res) => {
+        
           this.alertService.success('Updated successful', true);
          // this.router.navigate(['/myprofile']);
         
@@ -140,17 +144,22 @@ onSubmit() {
   getById()
   {
     let id=this.currentUser.id;
-   
+  
     this.userService.getById(id).subscribe(
       (res:any) => {
         this.loading=false;
-       // console.log(res.data)
         this.getusers=res.data;
-        console.log(res.data)
-        this.myprofile.get('email').setValue(this.getusers.email);
-        this.myprofile.get('mobile_number').setValue(this.getusers.mobile_number);
-        this.myprofile.get('name').setValue(this.getusers.name);
         this.imgURL=this.getusers.profile_path;
+       console.log("exit"+res.data);
+       this.myprofile = this.formBuilder.group({
+        name: [this.getusers.name, Validators.required],    
+        dob: [this.getusers.DOB, Validators.required],    
+        email: [this.getusers.email, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+               mobile_number: [this.getusers.mobile_number, Validators.required],
+      });
+       
+       
+      //  this.imgURL=this.getusers.profile_path;
         
        // this.router.navigate(['/myprofile']);
       

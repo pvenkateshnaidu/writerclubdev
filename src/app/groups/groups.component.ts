@@ -12,7 +12,10 @@ import { Router } from '@angular/router';
 export class GroupsComponent implements OnInit {
   sendEmailForm: FormGroup;
   createGroup: FormGroup;
+  Emails:[] =[];
   allgroups: [] = [];
+  Arr = Array; 
+  num:number = 2;
   loading = false;
   loaded;
   submitted = false;
@@ -39,6 +42,7 @@ export class GroupsComponent implements OnInit {
       "user_id": currentUser.id
     });
     this.getAllGroups();
+   // this.getGroupEmail(49);
   }
   openModal() {
 
@@ -88,6 +92,7 @@ export class GroupsComponent implements OnInit {
         this.loading = false;
         // this.router.navigate(['/myprofile']);
         this.getAllGroups();
+            this.alertService.success('Group Deleted successfully', true);
       },
       (err) => {
         this.loading = false;
@@ -155,6 +160,7 @@ export class GroupsComponent implements OnInit {
         this.loading = false;
         // this.router.navigate(['/myprofile']);
         this.alertService.success('Group Created successful', true);
+        this.onCloseHandled();
         this.getAllGroups();
         this.createGroup.reset()
       },
@@ -179,4 +185,21 @@ export class GroupsComponent implements OnInit {
       })
 
   }
+ /* getGroupEmail(id:number)
+  {
+   // alert(id)
+    this.categoriesService.getGroupEmails(id).subscribe(
+      (res: any) => {
+      //  alert()
+        this.Emails = res.data;
+        console.log(res.data)
+     return  res.data;
+        // this.router.navigate(['/myprofile']);
+      },
+      (err) => {
+        this.loading = false;
+        console.log("emails"+err)   
+      })
+  
+  } */
 }

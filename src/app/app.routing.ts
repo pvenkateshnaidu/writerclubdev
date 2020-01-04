@@ -1,18 +1,18 @@
-﻿import { Routes, RouterModule } from '@angular/router';
-
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
-import { AuthGuard } from './_guards';
+﻿import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
-import { StoryFeedComponent } from './story-feed/story-feed.component';
-import { MyStoriesComponent } from './my-stories/my-stories.component';
-import { WriteStoryComponent } from './write-story/write-story.component';
+import { GroupsComponent } from "./groups/groups.component";
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
 import { MyProfileComponent } from './my-profile/my-profile.component';
-import { SingleStoryComponent } from './single-story/single-story.component'
-import {GroupsComponent} from "./groups/groups.component";
-import{PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
+import { MyStoriesComponent } from './my-stories/my-stories.component';
+import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
+import { RegisterComponent } from './register';
+import { SingleStoryComponent } from './single-story/single-story.component';
+import { StoryFeedComponent } from './story-feed/story-feed.component';
+import { WriteStoryComponent } from './write-story/write-story.component';
+import { AuthGuard } from './_guards';
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, },
     { path: 'login', component: LoginComponent },
@@ -26,6 +26,7 @@ const appRoutes: Routes = [
     { path: 'contact', component: ContactComponent,canActivate: [AuthGuard] },
     { path: 'groups', component: GroupsComponent,canActivate: [AuthGuard] },
     { path: 'home',redirectTo: ''},
+ 
     // otherwise redirect to home
     { path: '**', component:PagenotfoundComponent }
 ];

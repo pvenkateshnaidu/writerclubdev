@@ -209,4 +209,15 @@ let options = { headers: headers };
 
   return this.http.get(`${this.testUrl}/sendmailGroup?id=`+id+`&sid=`+storyId,options);
 }
+
+public getGroupEmails(id:number)
+{
+  let headers = new HttpHeaders({
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded'
+     });
+let options = { headers: headers };
+
+  return this.http.get(`${this.testUrl}/getGroupEmails?id=`+id,options);
+}
 }

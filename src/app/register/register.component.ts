@@ -7,8 +7,18 @@ import { Cat } from '../_models/cat';
 import { CategoriesService } from '../_services/categories.service';
 import { AlertService, UserService } from '../_services';
 import { MustMatch } from "../_helpers/must-match.validator";
+export class Profile { 
+    constructor(public prId:string, public prName:string) {
+    }	
+}
 @Component({templateUrl: 'register.component.html'})
+ 
 export class RegisterComponent implements OnInit {
+    allProfiles = [
+        new Profile('m', 'Male'),
+        new Profile('f', 'Female'),
+      
+    ] ;
     registerForm: FormGroup;
     loading = false;
     submitted = false;
@@ -29,13 +39,13 @@ users: any[] =[];
        
         this.registerForm = this.formBuilder.group({
          name: ['', Validators.required],
-         lastname: ['', Validators.required],
+         gender: ['', Validators.required],
           country: ['', Validators.required],
           email: ['', [Validators.required, Validators.email]],
           password: ['', [Validators.required, Validators.minLength(6)]],
           mobile_number: ['', [Validators.required, Validators.minLength(10)]],          
-          gender: ['Male'],
-          dob:['', Validators.required],
+        
+        dob:['', Validators.required],
           state:['Andhrapradesh'],
           zip:['517644'],
           geolat:[''],

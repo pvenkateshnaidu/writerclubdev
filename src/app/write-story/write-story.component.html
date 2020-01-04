@@ -1,81 +1,82 @@
 
+<form [formGroup]="writestory">
+<!-- test-->
+<div class="my-custom-class">
+    <div class="container-fluid p-0">
+        <div class="d-flex">
+            <div class="col-lg-4 p-0 bg-white h-100">
+                <ul class="nav nav-tabs story_editor" role="tablist">
+                    <ul class="d-flex justify-content-between story_container w-100">
+                        <li>Story Editor</li>
+                        <li><i class="fas fa-eye"></i>&nbsp;Preview</li>
+                    </ul>
+                   
+                    <li class="nav-item ">
+                        <a class="nav-link active show" href="#buzz" role="tab" data-toggle="tab">Categories</a>
+                    </li>
+                   
+                </ul>
 
-
-<form [formGroup]="writestory" (ngSubmit)="onSubmit()">
-        <div class="container bootstrap snippet">
-            <div class="row">
-                <div class="col-sm-10">
-                    <h1>Story Image</h1>
-                </div>
-                <div class="text-center">
-                    <img [src]="imgURL" class="avatar img-circle img-thumbnail" height="200" *ngIf="imgURL">
-    
-                    <h6>Upload a different photo...</h6>
-                    <label class="image-upload-container btn btn-bwm">
-                        <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
-                            class="text-center center-block file-upload">
-    
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <!--/col-3-->
-                <div class="col-sm-9">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home">
-                            <div class="form-group">
-                                <!-- Material checked -->
-
-        <div *ngFor="let obj of cats" class="form-check">
-        <input type="checkbox" class="form-check-input" id="materialChecked2" (change)="onChange(obj.cat_id, $event.target.checked)">
-        <label class="form-check-label" for="materialChecked2">{{obj.cat_name}}</label>
-        </div>
-       
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="first_name">
-                                        <h4>Story Name</h4>
-                                    </label>
-                                    <input type="text" formControlName="name" class="form-control" placeholder="Story Name *"
-                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                                    <div *ngIf="f.name.errors.required">First Name is required</div>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="mobile">
-                                        <h4>Description</h4>
-                                    </label>
-                                    <textarea formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
-                                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                                     <div *ngIf="f.description.errors.required">Description is required</div>
-                                </div>
-                            </div>
-                            Public <input type="radio" name="share" formControlName="share" class="form-control" value="Public"  [ngClass]="{ 'is-invalid': submitted && f.share.errors }"/>
-                            Private <input type="radio" name="share" formControlName="share" class="form-control" value="Private"/>
-                            Groups <input type="radio" name="share" formControlName="share" class="form-control" value="Groups"/>
-                            <div *ngIf="submitted && f.share.errors" class="invalid-feedback">
-                               <div *ngIf="f.share.errors.required">Description is required</div>
-                               </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <br>
-                                    <button class="btn btn-primary">Save</button>
-                                </div>
-                            </div>
-
-                         
-
+                <!-- Tab panes -->
+                <div class="tab-content p-3">
+               
+                    <div role="tabpanel" class="tab-pane active" id="buzz">
+                          <div [innerHtml]="htmlToAdd" ></div>  
+                        <ul class="images_container">
                             
-                        </div>
+                            <li *ngFor="let obj of cats" ><input  (change)="onChange(obj.cat_id, $event.target.checked)" type="checkbox"   />
+                                {{obj.cat_name}} <label for="cb1"><img src="{{obj.image_path}}" class="img-fluid" /></label>
+                            </li>
+                           
+                            
+                        </ul>
                     </div>
-                    <!--/tab-pane-->
+                   
                 </div>
-                <!--/tab-content-->
+
+            </div>
+            <div class="col-lg-7">
+                <div class="d-flex mt-3 rightside_con">
+                        <div class="text-center">
+                                <img [src]="imgURL" class="avatar img-circle img-thumbnail" height="200" *ngIf="imgURL">
+
+                                <h6>Choose Covered Image...</h6>
+                                <label class="image-upload-container btn btn-bwm">
+                                    <input #imageInput  [ngClass]="{ 'is-invalid': submitted && f.image.errors }" formControlName="image"  type="file" accept="image/*" (change)="processFile(imageInput)"
+                                        class="form-control text-center center-block file-upload">
+                                        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                                                <div *ngIf="f.image.errors.required">Image  is required</div>
+                                            </div>
+                                </label>
+                                
+                            </div>
+                    <input type="text" formControlName="name" class="form-control"
+                        placeholder="Story Name *"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                    </div>
+                    <br>
+                    <div class="backg">
+                       
+                            <ckeditor [editor]="Editor" [config]="editorConfig" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" class="form-control document-editor" formControlName="description"
+                            data="<p>Hello, world!</p>" (ready)="onReady($event)"></ckeditor>
+                            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                    <div *ngIf="f.description.errors.required">Description is required</div>
+                                </div>
+                    </div>
+                    <br>
+                   
+                </div>
             </div>
         </div>
-        </div>
-    </form>
+    </div>
+</div>
+<div class="bg-white p-4 w-100 shadow mt-4 d-flex justify-content-end button_con">
+ 
+    <button type="submit"  value="private"  (click)="onSubmit($event)"  class="btn draft">Save as Draft</button> 
+    <button type="submit"  value="public"  (click)="onSubmit($event)"  class="btn publish">Publish</button>
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+</div>
+<!-- end -->
+</form>
