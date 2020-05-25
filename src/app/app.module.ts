@@ -39,7 +39,8 @@ import {
     AuthServiceConfig,
     GoogleLoginProvider,
     FacebookLoginProvider,
-} from "angular-6-social-login";
+} from "angular-6-social-login";;
+import { SampleComponent } from './sample/sample.component'
 // Configs 
 export function getAuthServiceConfigs() {
     let config = new AuthServiceConfig(
@@ -82,7 +83,7 @@ export function getAuthServiceConfigs() {
  
         WriteStoryComponent,
         MyStoriesComponent,
-        MyProfileComponent ,GroupsComponent , SingleStoryComponent , PagenotfoundComponent ],
+        MyProfileComponent ,GroupsComponent , SingleStoryComponent , PagenotfoundComponent , SampleComponent],
     providers: [
         AuthGuard,
         AlertService,

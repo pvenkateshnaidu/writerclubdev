@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     geolng:any;
     token:any;
     gender: any;
-users: any[] =[];
+    users: any[] =[];
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
