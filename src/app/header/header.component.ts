@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, HostListener,Inject } from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @HostListener('window:scroll', ['$event'])
+    scrollHandler(event) {
+      let number = window.scrollY;
+      let nav = document.querySelector('.navbar ');
+
+      if(number > 50){
+       nav.classList.add('fixed-top');
+
+        //console.log("Scroll Event");
+      }else{
+        nav.classList.remove('fixed-top')
+      }
+    
+    }
+    
 profilepath:string;
   isLoggedIn$: Observable<boolean>;
   logout =false;
+  window:any;
 cuser:any;
-  constructor(public authService: AuthenticationService) { }
+  constructor(public authService: AuthenticationService, @Inject(DOCUMENT) private document:Document) { }
+
+  hideBodyScroll(){
+    
+    let show = document.querySelector('.navbar-collapse');
+    let overlay = document.querySelector('.overlay');
+   
+      if(show.classList.contains("show")){
+        this.document.body.style.overflow ='auto'; 
+        overlay.classList.remove('show');
+      }else{
+        this.document.body.style.overflow ='hidden'; 
+        overlay.classList.add('show');
+      }
+   
+   
+    
+  }
+
+  hideoverlay(){
+    let overlay = document.querySelector('.overlay');
+    let show = document.querySelector('.navbar-collapse');
+    var navbar = this.document.querySelector('.navbar');
+    let body = this.document.querySelector('body');
+    show.classList.remove('show');
+    overlay.classList.remove('show');
+    show.classList.add('collapsing');
+    body.style.overflow ='auto';
+    navbar.insertBefore(overlay,navbar.childNodes[2]);
+    setTimeout(() => {
+      show.classList.remove('collapsing');
+    }, 600);
+  }
 
   ngOnInit() {
+    
+  
+
   //  console.log(this.logout)
     this.isLoggedIn$ = this.authService.isLoggedIn;
     console.log(this.isLoggedIn$.source);

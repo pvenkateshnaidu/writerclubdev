@@ -1,11 +1,14 @@
 
 
 <!--Navbar -->
+<div class="overlay" (click)="hideoverlay()"></div>
+<div class="container" (scroll)="scrollHandler($event)" >
+  <div class="spacer">
 
-    <nav *ngIf="!(isLoggedIn$ | async)" class="navbar navbar-expand-lg navbar-dark info-color bg-white ml-4 mr-4">
+    <nav *ngIf="!(isLoggedIn$ | async)" class="navbar navbar-expand-lg navbar-dark info-color bg-white">
 
   <a class="navbar-brand" [routerLink]="['/home']"><img src="/assets/Reg_Bingos_logo.png"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+  <button (click)="hideBodyScroll()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,18 +39,16 @@
         <a class="nav-link" [routerLink]="['/Contact']">Contact</a>
       </li>
     -->
-      
+        <li class="login_one nav-item">
+        <a class="login" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a>
+        </li>
+        <li class="login_one nav-item">
+        <a class="login active" [routerLink]="['/register']" [routerLinkActive]="['active']">Register</a>
+        </li>
      
     </ul>
   </div>
-  <ul class="login_area" >
-    <li class="login_one">
-    <a class="login" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a>
-    </li>
-    <li class="login_one">
-    <a class="login active" [routerLink]="['/register']" [routerLinkActive]="['active']">Register</a>
-    </li>
-  </ul>
+
 </nav>
 <!--Navbar -->
 <nav *ngIf="(isLoggedIn$) | async as isLoggedIn" class="mb-1 navbar navbar-expand-lg navbar-dark info-color shadow-sm bg-orange border-bottom ml-4 mr-4">
