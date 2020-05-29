@@ -149,3 +149,118 @@
       margin-left:0 ; 
     }
   }
+  /*groups new Styles */
+  
+.card-bg img {
+  width: 80px;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  height: 100px;
+  padding: 5px;
+}
+.card{
+  border:transparent
+}
+.card-bg {
+  background: #f6c141;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 10px;
+}
+.card-body {
+  box-shadow: 2px 2px 10px #e2e2e2, -2px 2px 10px #e2e2e2
+}
+.groupinfo{
+  font-size: 18px;
+}
+span.coun {
+  background: #f6c141;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 100%;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+}
+.thumb-nail img{
+  width: 65px;
+  height: 80px;
+  border-radius: 100%;
+  border: 1px solid #e2e2e2;
+  padding: 5px;
+}
+.card-body .thumb-nail{
+  position: relative;
+  text-align: center;
+}
+.times{
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  background: #FF9800;
+  width: 20px;
+  height: 20px;
+  line-height: 13px;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 100%;
+  border: 2px solid #fff;
+}
+.upload{
+  position:relative;
+  width:100px;
+  margin: 0 auto;
+}
+.edit-image{
+  background: #333;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  right: 0px;
+  bottom: 15px;
+  color: #fff;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+.spl-buttons{
+  padding-left: 40px;
+  position: relative;
+  box-shadow: 2px 2px 5px #e2e2e2, -2px 2px 5px #e2e2e2;
+}
+.spl-buttons .added-group{
+  position: absolute;
+  width: 35px;
+  left: -1px;
+  background: #fff;
+  top: -1px;
+  bottom: -1px;
+  line-height: 35px;
+  /* height: 35px; */
+  margin-right: 5px;
+}
+.file-upload{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 0;
+  bottom: 13px;
+  z-index: 5;
+  opacity: 0;
+}
+@media(max-width:435px){
+  .flex-buttons{
+    flex-direction: column;
+  }
+  .mr-3.spl-buttons{
+    margin-right:0 !important;
+    margin-bottom: 15px;
+  }
+}

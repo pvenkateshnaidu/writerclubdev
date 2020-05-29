@@ -23,7 +23,7 @@
     "@ckeditor/ckeditor5-angular": "^1.1.0",
     "@ckeditor/ckeditor5-build-decoupled-document": "^12.4.0",
     "angular-6-social-login": "^1.1.1",
-    "bootstrap": "4.1.1",
+    "bootstrap": "^4.4.1",
     "google-libphonenumber": "^3.2.6",
     "intl-tel-input": "^16.0.7",
     "ngx-bootstrap": "^5.1.0",
