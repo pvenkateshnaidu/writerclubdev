@@ -9,13 +9,34 @@ import {DOCUMENT} from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+ mobile = false;
+ user = true;
+ scrWidth:any;
+ @HostListener('window:resize',['$event'])
+ getScreenSize(event){
+
+this.scrWidth = window.innerWidth;
+  if(this.scrWidth < 992){
+    this.mobile = true;
+    this.user = false;
+
+  }else{
+    this.mobile = false;
+    this.user = true;
+
+  }
+ }
+ @HostListener('window:load', ['$event'])
+ getLoad(event){
+  this.getScreenSize(event)
+ }
 
   @HostListener('window:scroll', ['$event'])
     scrollHandler(event) {
       let number = window.scrollY;
       let nav = document.querySelector('.navbar ');
 
-      if(number > 50){
+      if(number > 75){
        nav.classList.add('fixed-top');
 
         //console.log("Scroll Event");

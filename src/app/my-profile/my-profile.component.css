@@ -1,0 +1,18 @@
+@media(max-width:575.9px){
+    .fdm{
+        flex-direction: column;
+    }
+    .d-flex.flex-column.w-50{
+        width:100% !important;
+        margin-bottom: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px){
+    .image-upload-container{
+        width:75%;
+        overflow: hidden;
+    }
+    .fdm{
+        margin-bottom: 20px;
+    }
+}

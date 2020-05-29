@@ -247,3 +247,13 @@ img.author_pic {
     }
     
 }
+@media(min-width:768px) and (max-width:1023px){
+    .write_your_container{
+      padding: 35px 15px;
+    }
+    .top-banner .content{
+        left: 10%;
+        right: 40%;
+        top: 10%;
+    }
+}

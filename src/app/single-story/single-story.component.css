@@ -1,6 +1,6 @@
-.share_story_container {
+/* .share_story_container {
     width: 88%;
-}
+} */
   .share_story_container .share_story {
       font-size: 26px;
 }
@@ -218,4 +218,9 @@ a{
 .ck-content[dir="rtl"] blockquote {
     border-left: 0;
     border-right: solid 5px hsl(0, 0%, 80%);
+}
+@media(max-width:575.9px){
+    .share_story_container{
+        background:#fff
+    }
 }

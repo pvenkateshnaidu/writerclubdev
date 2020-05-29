@@ -17,7 +17,7 @@
 
     .img-content-center {
       top: 42px;
-      bottom: 50px;
+      /* bottom: 50px; */
       right: 15px;
       position: absolute;
       width: 353px;
@@ -59,7 +59,7 @@
   float: left;
 }
 
-.social_icons {
+/* .social_icons {
     position: absolute;
     right: 14px;
     width: 250px;
@@ -67,11 +67,11 @@
     min-height: 34px;
     padding-left: 27px;
     padding-top: 5px;
-}
+} */
 
 .social_icons .share {
     float: right;
-    position: absolute;
+    /* position: absolute; */
     right: 0;
     background-color: #e9ecef;
     height: 30px;
@@ -81,7 +81,10 @@
     padding-top: 2px;
     border: 1px solid #c2c0c0;
 }
-
+/* .social_icons{
+  width: 100%;
+  display: inline-block;
+} */
 .social_icons .view {
   color: gray;
 }

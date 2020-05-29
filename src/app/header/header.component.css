@@ -187,7 +187,15 @@ a.nav-link.active:after {
   transition:width all 0.3s ease-in-out;
 }
 
-
+.user_pic.active {
+  padding: 30px 15px;
+  text-align: center;
+  background: #f6c141;
+}
+.viewport{
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+}
 @media (max-width:991.9px){
   .navbar-collapse{
     position: fixed;
@@ -231,9 +239,23 @@ a.nav-link.active:after {
   li.login_one{
     margin: 0;
   }
-}
-@media(max-width:991.9px){
   .navbar a.nav-link:after{
     background: none;
 }
+.ellipsis{
+  display: none;
+}
+
+.bg-orange.navbar .nav-link{
+  color:#333 !important
+}
+  nav.bg-orange a.nav-link:after{
+    background: none !important;
+  }
+}
+@media(max-width:575.9px){
+  .navbar{
+    padding: .5rem 1rem !important;
+  }
+  
 }

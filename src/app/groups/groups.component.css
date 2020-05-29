@@ -1,6 +1,7 @@
-.share_story_container {
+
+/* .share_story_container {
     width: 88%;
-  }
+  } */
   .share_story_container .share_story {
       font-size: 26px;
     
@@ -130,4 +131,21 @@
   
   .closee{
       background: #F6C14C
+  }
+  .cng{
+    margin-left:3rem;
+  }
+  @media(max-width:575.9px){
+    .share_story_container .img_align{
+      left:0 ;
+    }
+    .share_story_container .circlebg{
+      width: 50px ;
+      height: 75px ;
+      background-color: #eca837 ;
+      border-radius: 0 !important;
+    }
+    .cng{
+      margin-left:0 ; 
+    }
   }

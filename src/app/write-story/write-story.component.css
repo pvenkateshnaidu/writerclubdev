@@ -1,6 +1,6 @@
-.share_story_container {
+/* .share_story_container {
     width: 88%;
-}
+} */
  .share_story {
       font-size: 26px;
 }
@@ -156,8 +156,8 @@ input[type="checkbox"][id^="cb"] {
 
 /*========Rightsie========*/
 .rightside_con {
-  border: 1px solid #9c9b9b;
-  padding:16px;
+  /* border: 1px solid #9c9b9b; */
+  /* padding:16px; */
   border-radius: 8px;
   flex-direction: column;
 }
@@ -387,4 +387,15 @@ Preserve the relative scale, though. */
 }
 .ck-content{
   min-height: 300px !important;
+}
+.rightside_con .ck.ck-toolbar {
+border-right:transparent;
+border-left: transparent;
+border-top:transparent;
+  border-bottom: 1px solid var(--ck-color-toolbar-border);
+}
+@media(max-width:575.9px){
+  .draft{
+    padding: 8px 15px;
+  }
 }
