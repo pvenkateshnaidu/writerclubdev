@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         islogged : boolean;
     ngOnInit() {
         this.document.body.classList.add('bg-none');
+        this.document.body.style.overflow = "auto"
       //  this.getCateg();
         this.loginForm = this.formBuilder.group({
             email: ['', Validators.required],
@@ -133,5 +134,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(){
         this.document.body.classList.remove('bg-none');
+        
     }
 }

@@ -172,6 +172,9 @@ body.bg-none{background: none !important;}.bd-highlight{padding-left:10%}
     border: 1px solid #ced4da;
     border-right: transparent;
 }
+.outer-space{
+    margin-top: 5%;
+}
 
     @media(max-width:991.9px){
         .direction-column .col-12:first-child,
@@ -181,11 +184,17 @@ body.bg-none{background: none !important;}.bd-highlight{padding-left:10%}
         .register .form-group{
             margin-bottom: 2rem;
         }
+        .bd-highlight{
+            padding-left:0;
+        }
     }
 
     @media(max-width:1199.9px){
         .logo img{
             margin-top: 25px;
+        }
+        .bd-highlight{
+            padding-left:15px;
         }
     }
 

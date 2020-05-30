@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
-import {Component, OnInit, HostListener,Inject } from '@angular/core';
+import {Component, OnInit, HostListener,Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 
 @Component({
@@ -8,13 +8,28 @@ import {DOCUMENT} from '@angular/common';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
  mobile = false;
  user = true;
  scrWidth:any;
+
+ 
+ logoutFunction(){
+  //this.getScreenSize(event);
+  let overlay = document.querySelector('.overlay');
+    let show = document.querySelector('.navbar-collapse');
+    let body = this.document.querySelector('body');
+
+    show.classList.remove('show');
+    overlay.classList.remove('show');
+    body.style.overflow ='auto';
+ }
+
+
+
  @HostListener('window:resize',['$event'])
  getScreenSize(event){
-
+  
 this.scrWidth = window.innerWidth;
   if(this.scrWidth < 992){
     this.mobile = true;
@@ -23,12 +38,14 @@ this.scrWidth = window.innerWidth;
   }else{
     this.mobile = false;
     this.user = true;
-
+    this.logoutFunction()
   }
  }
  @HostListener('window:load', ['$event'])
  getLoad(event){
-  this.getScreenSize(event)
+  this.getScreenSize(event);
+
+
  }
 
   @HostListener('window:scroll', ['$event'])
@@ -51,9 +68,14 @@ profilepath:string;
   logout =false;
   window:any;
 cuser:any;
-  constructor(public authService: AuthenticationService, @Inject(DOCUMENT) private document:Document) { }
+  constructor(public authService: AuthenticationService, @Inject(DOCUMENT) private document:Document) { 
+ 
 
-  hideBodyScroll(){
+  }
+
+
+  
+  hideBodyScroll(event){
     
     let show = document.querySelector('.navbar-collapse');
     let overlay = document.querySelector('.overlay');
@@ -65,30 +87,27 @@ cuser:any;
         this.document.body.style.overflow ='hidden'; 
         overlay.classList.add('show');
       }
-   
-   
-    
+
   }
 
   hideoverlay(){
     let overlay = document.querySelector('.overlay');
     let show = document.querySelector('.navbar-collapse');
-    var navbar = this.document.querySelector('.navbar');
     let body = this.document.querySelector('body');
+
     show.classList.remove('show');
     overlay.classList.remove('show');
-    show.classList.add('collapsing');
+    // show.classList.add('collapsing');
     body.style.overflow ='auto';
-    navbar.insertBefore(overlay,navbar.childNodes[2]);
-    setTimeout(() => {
-      show.classList.remove('collapsing');
-    }, 600);
+  
   }
 
-  ngOnInit() {
-    
-  
 
+
+  ngOnInit() {
+
+
+    
   //  console.log(this.logout)
     this.isLoggedIn$ = this.authService.isLoggedIn;
     console.log(this.isLoggedIn$.source);
@@ -106,7 +125,8 @@ console.log(this.cuser);
 
   onLogout() {
     this.logout=true;
-    this.authService.logout();
+    this.authService.logout();   
   }
+
 
 }

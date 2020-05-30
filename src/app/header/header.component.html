@@ -1,19 +1,19 @@
 
 
 <!--Navbar -->
-<div class="overlay" (click)="hideoverlay()"></div>
+
 <div class="container" (scroll)="scrollHandler($event)" >
   <div class="spacer">
 
     <nav *ngIf="!(isLoggedIn$ | async)" class="navbar navbar-expand-lg navbar-dark info-color bg-white">
-
+        <div class="overlay" (click)="hideoverlay()" *ngIf="!(isLoggedIn$ | async)"></div>
   <a class="navbar-brand" [routerLink]="['/home']"><img src="/assets/Reg_Bingos_logo.png"/></a>
   <button (click)="hideBodyScroll()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-    <ul class="d-flex navbar-nav ml-auto">
+    <ul class="d-flex navbar-nav ml-auto" (click)="logoutFunction()">
   
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
@@ -52,6 +52,7 @@
     </nav>
 <!--Navbar -->
 <nav *ngIf="(isLoggedIn$) | async as isLoggedIn" class="navbar navbar-expand-lg navbar-dark info-color shadow-sm bg-orange border-bottom">
+    <div class="overlay" (click)="hideoverlay()" *ngIf="(isLoggedIn$) | async as isLoggedIn"></div>
   <a class="navbar-brand" [routerLink]="['/home']"><img src="/assets/Reg_Bingos_logo.png"/></a>
   <button class="navbar-toggler" (click)="hideBodyScroll()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +60,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
     <div class="user_pic" *ngIf="mobile" [ngClass]="{active:mobile}"><a href="#"><img src="{{profilepath}}"/></a></div>
-    <ul class="d-flex navbar-nav ml-auto" [ngClass]="{viewport:mobile}">
+    <ul class="d-flex navbar-nav ml-auto" [ngClass]="{viewport:mobile}" (click)="logoutFunction()">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/storyfeed']" [routerLinkActive]="['active']">Story Feed</a>
       </li>
@@ -89,7 +90,7 @@
             <a class="nav-link" [routerLink]="['/myprofile']" [routerLinkActive]="['active']">My Profile</a>
         </li>
         <li class="nav-item" *ngIf="mobile"><a class="nav-link" [routerLink]="['/groups']" [routerLinkActive]="['active']">My Groups</a></li>
-        <li class="nav-item" *ngIf="mobile"><a class="nav-link" [routerLink]="['/login']">Log Out</a></li>
+        <li class="nav-item" *ngIf="mobile" ><a class="nav-link" [routerLink]="['/login']">Log Out</a></li>
 
     </ul>
   </div>
