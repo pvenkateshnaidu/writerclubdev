@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center" (click)="shareStoryMembers()">
                             <div class="share"><i class="fas fa-share-alt"></i></div>
                             <div >Share Stoy</div>
                         </div>
@@ -39,4 +39,38 @@
     </div>
 </div>
       
-
+<!-- The Modal -->
+<div class="modal-container">
+<div class="overlay"></div>
+<div class="modal" id="myModal"  [ngStyle]="{'display':display}" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Select Group Members</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="onCloseHandled()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="form-check-inline mb-3">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">muvvasaisudhakar@gmail.com
+                </label>
+            </div>
+            <div class="form-check-inline mb-3">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">saisudhakarm@propertyadviser.in
+                </label>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-warning">Share</button>
+            </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </div>
+</div>

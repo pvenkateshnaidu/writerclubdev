@@ -123,236 +123,33 @@
           <p class="mt-3">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
       </div>
      
-      <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-md-2">
         <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                  <input type="file" class="file-upload"/>
+          <div class="card mb-5">
+            <div class="card-bg text-center">
+              <div class="upload">
+                <input type="file" class="file-upload"/>
                 <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
                 <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
+              </div>
+              <div class="delete" (click)="DeleteGroup()"><i class="fa fa-trash mr-1"></i>Delete Group</div>
+              <h5 class="card-title mt-2">Writers Club Dev</h5>
+              <small>Provide Group Subject and optional group icon</small>
+
             </div>
-        </div>
-        <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
+
+            <div class="card-body">
+              <h3 class="groupinfo mb-3">Group Members <span class="coun badge">05</span></h3>
+              <div class="mail-list">
+                <label class="mb-3">muvvasaisudhakar@gmail.com</label>
+                <label class="mb-3">venkateh.podoli@gmail.com</label>
+                <label class="mb-3">saisudhakarm@propertyadviser.in</label>
+                <label class="mb-3">johnwrick@hotmail.com</label>
+              </div> 
             </div>
+          </div>
         </div>
-        <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-3">
-                <div class="card-bg text-center">
-                <div class="upload">
-                <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                <span class="edit-image"><i class="fa fa-pen"></i></span>
-                 </div>
-                <h5 class="card-title mt-2">Writers Club Dev</h5>
-                <small>Provide Group Subject and optional group icon</small>
-                 </div>
-                <div class="card-body">
-                  <h3 class="groupinfo">Group Members <span class="coun badge">05</span></h3>
-                  <div class="row row-cols-4 row-cols-sm-5 row-cols-md-4">
-                    <div class="thumb-nail mt-2">
-                        <img src="https://loiane.com/assets/images/loiane.jpg" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxD4QBqR-luFOeCAFhz6tjGf95AUK7Ugn391-Eh1x8Ljt2FQO3&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNnF7-RLq_O4s3l4-wrobaRSXmPzGUIzMAL1wTVpC3CQ9EqUzt&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxUnVYoHEP0FA6S9gxEPFsXHam9dQ5KVdeTUg9YwbKan0YTemj&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                    <div class="thumb-nail mt-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtsKhIqOqzptqPAVUsTlnA5obdgeZ5OYDv71irJkekbNBs_40N&usqp=CAU" class="card-img-top" alt="...">
-                        <span class="times">&times;</span>
-                    </div>
-                  </div> 
-                  
-                </div>
-            </div>
-        </div>
+        
       </div>
        
 

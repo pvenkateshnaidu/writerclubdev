@@ -186,18 +186,18 @@ span.coun {
     color: #fff;
     font-size: 14px;
 }
-.thumb-nail img{
+/* .thumb-nail img{
   width: 65px;
   height: 80px;
   border-radius: 100%;
   border: 1px solid #e2e2e2;
   padding: 5px;
-}
+} */
 .card-body .thumb-nail{
   position: relative;
   text-align: center;
 }
-.times{
+/* .times{
   position: absolute;
   right: 15px;
   top: 0px;
@@ -212,7 +212,7 @@ span.coun {
   cursor: pointer;
   border-radius: 100%;
   border: 2px solid #fff;
-}
+} */
 .upload{
   position:relative;
   width:100px;
@@ -255,6 +255,24 @@ span.coun {
   z-index: 5;
   opacity: 0;
 }
+.mail-list label{
+  width:100%;
+  overflow: hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.delete{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: #333333;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
 @media(max-width:435px){
   .flex-buttons{
     flex-direction: column;
@@ -262,5 +280,24 @@ span.coun {
   .mr-3.spl-buttons{
     margin-right:0 !important;
     margin-bottom: 15px;
+  }
+ 
+}
+@media(max-width:767.9px){
+  .delete{
+    font-size: 9px;
+  }   
+  .card-bg img{
+    width: 65px;
+    margin: 10px auto;
+    height: 85px;
+  }
+  .edit-image{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: 10px;
+    bottom: 30px;
+    font-size: 12px;
   }
 }

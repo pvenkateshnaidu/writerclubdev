@@ -70,7 +70,9 @@ export class GroupsComponent implements OnInit {
     console.log(forbidden);
     return forbidden ? { 'toAddress': { value: control.value } } : null;
   };
-
+  DeleteGroup(){
+    console.log('Group Deleted');
+  }
   removeMember(id: number) {
     this.loading = true;
     this.categoriesService.removeMember(id).subscribe(

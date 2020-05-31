@@ -219,6 +219,29 @@ a{
     border-left: 0;
     border-right: solid 5px hsl(0, 0%, 80%);
 }
+.overlay{
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width:0;
+}
+.overlayparent .overlay {
+    width: 100%;
+    z-index:9999;
+}
+.overlayparent .overlay ,
+.overlayparent .modal{
+    z-index:9999;
+}
+.overlayparent .modal-header{
+    background: #f6c141;
+}
+.modal-container .modal{
+    margin:75px auto;
+}
 @media(max-width:575.9px){
     .share_story_container{
         background:#fff

@@ -9,10 +9,14 @@ import { Location } from '@angular/common';
   templateUrl: './single-story.component.html',
   styleUrls: ['./single-story.component.css']
 })
+
+
+
 export class SingleStoryComponent implements OnInit {
   story:any=[];
   loading = false;
   id:any;
+  display = 'none';
   constructor( private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
@@ -27,11 +31,21 @@ export class SingleStoryComponent implements OnInit {
      this.id = this.route.snapshot.paramMap.get('id');
     //alert(id)
     this.getStory();
+   
   }
   backClicked() {
     this._location.back();
   }
-
+  shareStoryMembers(){
+    this.display ='block';
+    const item = document.querySelector('.modal-container');
+   item.classList.add('overlayparent');
+  }
+  onCloseHandled(){
+    this.display ='none';
+    const item = document.querySelector('.modal-container');
+    item.classList.remove('overlayparent');
+  }
   getStory()
   {
      this.id = this.route.snapshot.paramMap.get('id'); 
