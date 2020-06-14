@@ -152,6 +152,7 @@ a{
   color: #F6C14C;
 text-decoration: none
 }
+
 @media(max-width:575.9px){
   .position-relative.imgs{
     margin-bottom:25px;
