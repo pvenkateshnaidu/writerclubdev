@@ -1,5 +1,5 @@
 
-<body class="bg-none">
+<body class="bg-none spl-header">
     <?php include 'header.php' ?>
     <div  class="container">
     <div  class="spacer">

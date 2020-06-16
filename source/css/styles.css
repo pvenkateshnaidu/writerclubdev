@@ -18,7 +18,24 @@
     color:#a2a2a2;
     padding: 0 20px;
 }
-
+.spl-header .navbar{
+  background:linear-gradient(to right, #f5ab29, #f6c343);
+}
+.spl-header .nav-item .nav-link,
+.spl-header .nav-item .nav-link.active{
+  color:#fff !important
+}
+.spl-header a.nav-link:after{
+  background:#fff
+}
+.spl-header a.login.active {
+  border: 1px solid #fff;
+  background: none;
+}
+.spl-header .login-spl .login.active{
+ background: #fff;
+ color: rgb(242, 187, 61);
+}
 ul.navbar-nav { 
     margin:0; 
     padding: 0; 
@@ -71,7 +88,11 @@ a.login {
 li.login_one {
     margin: 0 10px;
 }
-.navbar{padding: .5rem 2rem;}
+.navbar{padding: .5rem 2rem;    border-bottom: 1px solid #f4f4f4;}
+.navbar.navbar.fixed-top{border-bottom:1px solid transparent}
+.navbar-dark .navbar-nav .nav-link.active{
+  color:#a2a2a2;
+}
 a.login:hover {
     color: #fff;
     background-color: #F6C14C;
@@ -83,7 +104,7 @@ a.login:hover {
 
 a.login.active {
     color: #fff;
-    background-color: #F6C14C;
+    background: linear-gradient(to right, #f5ab29, #f6c343);
     border-radius: 40px;
     text-decoration: none;
     background-repeat: repeat-y;
@@ -197,6 +218,9 @@ a.nav-link.active:after {
   max-height: calc(100vh - 100px);
   overflow: auto;
 }
+.overflow-hide{
+  overflow: hidden;
+}
 @media (max-width:991.9px){
   .navbar-collapse{
     position: fixed;
@@ -208,7 +232,8 @@ a.nav-link.active:after {
     bottom: 0px;
     transform: translateX(-100%);
     transition: all 0.3s ease 0s;
-    height:auto
+    height:auto;
+    display: block !important;
   }
   .navbar-collapse.show{
     transform: translateX(0);
@@ -252,6 +277,9 @@ a.nav-link.active:after {
 }
   nav.bg-orange a.nav-link:after{
     background: none !important;
+  }
+  .spl-header .nav-item .nav-link{
+    color:#a2a2a2 !important;
   }
 }
 @media(max-width:575.9px){
@@ -679,6 +707,10 @@ color: black;
       left: 10%;
       right: 40%;
       top: 10%;
+  }
+  .social-icons {
+    bottom: -35px !important;
+    right: 15px !important;
   }
 }
 
@@ -1625,7 +1657,7 @@ margin-left: 45px;
     top: 0px;
     width: 94%;
   }
-
+/* 
   .share {
     color: #fff;
     background-color: #F6C14C;
@@ -1635,12 +1667,12 @@ margin-left: 45px;
     border: 0px;
     outline: 0px;
     width: 251px;
-}
-.share:hover {
+} */
+/* .share:hover {
     color: #F6C14C;
     background-color: #fff;
    
-}
+} */
 
 .invite {
   color: #F6C14C;
