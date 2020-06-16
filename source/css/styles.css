@@ -36,6 +36,11 @@
  background: #fff;
  color: rgb(242, 187, 61);
 }
+.spl-header .drop-ellipse{
+  color:#fff;
+  margin-left:10px;
+  cursor: pointer;
+}
 ul.navbar-nav { 
     margin:0; 
     padding: 0; 
@@ -256,8 +261,12 @@ a.nav-link.active:after {
   li.nav-item{
     border-bottom: 1px solid #e2e2e2;
   }
+  .nav-item.user-pic,
+  .nav-item.drop-ellipse{
+    display: none;
+  }
   a.login.active,
-  a.login{
+  a.login,.spl-header .login-spl .login.active{
     background:none;
     color:#a2a2a2;
     padding:10px 20px !important;
@@ -989,7 +998,7 @@ margin-bottom: 115px;
 width: 61%;
 border-radius: 10px;
 }
-.user-pic {width: 50px; float: left;}
+.user-pic.nav-item{padding:7px 0;}
 .user-pic img {
 border-radius: 50%;
 height: 40px;
