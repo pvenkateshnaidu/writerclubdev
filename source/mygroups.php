@@ -62,23 +62,25 @@
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Create New Group</h4>
-        <button type="button" class="close" data-dismiss="modal" (click)="onCloseHandled()">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-          <alert></alert>
-        <form (ngSubmit)="create()">
-        
-          <label>Group Name</label>
-                      <input class="form-control" matInput formControlName="name">  
-                     <label>Select Group Members</label>
-                      <select formControlName="members" multiple>
-                          <option value="{{obj.id}}">Grroup members</option>
-                      </select>
-                      <h2></h2>
-                    <button  class="closee btn btn-warning"> Create</button>
-                  </form>
+        <form>
+          <div class="form-group">
+            <label>Group Name</label>
+            <input class="form-control">  
+          </div>
+
+          <div class="form-group">
+            <label>Select Group Members</label>
+            <select formControlName="members" multiple>
+              <option>Grroup members</option>
+            </select>
+          </div>
+          <button  class="closee btn btn-warning"> Create</button>
+        </form>
       </div>
 
       <!-- Modal footer -->
@@ -90,7 +92,7 @@
   </div>
 </div>
 <!-- The Modal -->
-<div class="modal" id="myModal1" >
+<div class="modal" id="myModal1">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
 
@@ -102,14 +104,13 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-      <alert></alert>
-        <form [formGroup]="sendEmailForm" (ngSubmit)="send(sendEmailForm.value)">
+  
+        <form>
         
           <label>Email Address</label>
-                      <input class="form-control" matInput formControlName="toAddress">  
-          
-                    <button class=" btn btn-danger mt-3" [disabled]="!sendEmailForm.valid"> Invite Now</button>
-                  </form>
+          <input class="form-control">  
+          <button class=" btn btn-danger mt-3"> Invite Now</button>
+        </form>
       </div>
 
       <!-- Modal footer -->
