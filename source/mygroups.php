@@ -75,7 +75,7 @@
 
           <div class="form-group">
             <label>Select Group Members</label>
-            <select formControlName="members" multiple>
+            <select formControlName="members" multiple class="form-control">
               <option>Grroup members</option>
             </select>
           </div>
