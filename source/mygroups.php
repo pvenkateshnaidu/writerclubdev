@@ -4,8 +4,8 @@
   <div class="bg-white">
     <div class="col-12">
         <div class="d-flex pt-5 mb-5 flex-buttons">
-            <button type="button" class="btn btn-warning mr-3 spl-buttons" (click)="openModal1()"><span class="added-group"><i class="fa fa-user"></i></span>Invite New Member</button>
-            <button type="button" class="btn btn-warning spl-buttons" (click)="openModal()"><span class="added-group"><i class="fa fa-plus"></i></span>Create New Group</button>
+            <button type="button" class="btn btn-warning mr-3 spl-buttons" data-toggle="modal" data-target="#myModal1" ><span class="added-group"><i class="fa fa-user"></i></span>Invite New Member</button>
+            <button type="button" class="btn btn-warning spl-buttons" data-toggle="modal" data-target="#myModal"><span class="added-group"><i class="fa fa-plus"></i></span>Create New Group</button>
            
          </div>
   
@@ -52,9 +52,11 @@
 
 
 <?php include 'footer.php' ?>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <!-- The Modal -->
-<div class="modal" id="myModal"  [ngStyle]="{'display':display}">
-  <div class="modal-dialog">
+<div class="modal" id="myModal" >
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
 
       <!-- Modal Header -->
@@ -66,36 +68,36 @@
       <!-- Modal body -->
       <div class="modal-body">
           <alert></alert>
-        <form [formGroup]="createGroup" (ngSubmit)="create()">
+        <form (ngSubmit)="create()">
         
           <label>Group Name</label>
                       <input class="form-control" matInput formControlName="name">  
                      <label>Select Group Members</label>
                       <select formControlName="members" multiple>
-                          <option value="{{obj.id}}" *ngFor="let obj of listemails">{{obj.email_id}}</option>
+                          <option value="{{obj.id}}">Grroup members</option>
                       </select>
                       <h2></h2>
-                    <button  class="closee btn btn-danger" > Create</button>
+                    <button  class="closee btn btn-warning"> Create</button>
                   </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="closee btn btn-danger" (click)="onCloseHandled()">Close</button>
+        <button type="button" class="closee btn btn-warning" data-dismiss="modal">Close</button>
       </div>
 
     </div>
   </div>
 </div>
 <!-- The Modal -->
-<div class="modal" id="myModal1"  [ngStyle]="{'display':display1}">
-  <div class="modal-dialog">
+<div class="modal" id="myModal1" >
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Invite New Members</h4>
-        <button type="button" class="close" data-dismiss="modal" (click)="onCloseHandled()">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
       </div>
 
       <!-- Modal body -->
@@ -112,7 +114,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class=" btn btn-danger" (click)="onCloseHandled()">Close</button>
+        <button type="button" class=" btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
     </div>
