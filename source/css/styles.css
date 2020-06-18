@@ -250,6 +250,7 @@ a.nav-link.active:after {
 }
 .groups-page .img_align.d-flex{
   align-items: flex-end;
+  cursor: pointer;
 }
 @media (max-width:991.9px){
   .navbar-collapse{
@@ -852,7 +853,7 @@ body.bg-none{background: none !important;}.bd-highlight{padding-left:10%}
             
             border-radius: 0 !important;
         }
-        .imgs img{
+        .imgs img.bordercolor1{
             width:100% !important;
         }
         
@@ -861,6 +862,12 @@ body.bg-none{background: none !important;}.bd-highlight{padding-left:10%}
         }
         .story_feed{
             margin-bottom: 20px;
+        }
+        .img-content h5{
+          white-space: nowrap;
+        }
+        .img-content-center{
+          min-height: 210px;
         }
     }
 
@@ -1023,6 +1030,10 @@ margin-bottom: 115px;
 width: 61%;
 border-radius: 10px;
 }
+img.bordercolor1 {
+  min-height: 235px;
+  max-height: 235px;
+}
 .user-pic.nav-item{padding:7px 0;}
 .user-pic img {
 border-radius: 50%;
@@ -1099,7 +1110,9 @@ font-size: 13px;
 align-items: center;
 align-content: center;
 }
-
+.read a {
+  color: #eeb14a;
+}
 .read i {
 font-size: 11px;
 padding-top: 2px;
@@ -1112,6 +1125,7 @@ float: left;
 
 .user_name p {
 margin-bottom: 4px;
+font-size:14px;
 }
 
 .user_name p:nth-child(2) {
@@ -1572,8 +1586,39 @@ li.category .nav-link::after{background:none}
 .draft{
 padding: 8px 15px;
 }
+.invite-buttons {
+  flex-direction: column;
 }
+.invite-buttons .invite-button {
+  padding: 7px 25px;
+  margin-bottom:20px
+}
+.invite-buttons .share-story-button {
+  padding: 7px 65px;
 
+}
+.group img {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+}
+/* mygroups page responsive styles */
+@media(max-width:767px){
+  .invite-buttons .invite-button {
+    padding: 7px 25px;
+  }
+  .invite-buttons .share-story-button {
+    padding: 7px 65px;
+  }
+}
+@media(min-width:768px) and (max-width:1199px){
+  .group img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+}
 /*myProfile.css*/
 .fdm{
   padding-left:10%
@@ -1847,7 +1892,7 @@ i.delete-info{
   background-position: -174px -20px;
 }
 .logout{
-    background-position: -62px -77px;
+    background-position: -62px -80px;
 }
 .dropdown-item.active, .dropdown-item:active {
   color: inherit;
@@ -2010,6 +2055,13 @@ input::-webkit-input-placeholder {
 .input-control:focus{
   outline: none;
 }
+.form-control.space{
+  height: auto;
+}
+.added-members .member{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 @media (min-width: 576px){
   .groups-page .modal-dialog {
     max-width: 565px;
@@ -2021,14 +2073,15 @@ input::-webkit-input-placeholder {
 .share_story_container .img_align{
   left:0 ;
 }
-.share_story_container .circlebg{
-  width: 50px ;
-  height: 75px ;
-  background-color: #eca837 ;
-  border-radius: 0 !important;
-}
+.count,
 .cng{
   margin-left:0 ; 
+}
+.share_story_container .share_story{
+  flex-direction: column;
+}
+.form-control.space {
+  padding: 10px;
 }
 }
 /*groups new Styles */
