@@ -1612,8 +1612,7 @@ i.fas.fa-paperclip{
 .my-custom-class label {
   color: #2b4368;
 }
-.invite-button,
-.share-story-button{
+.invite-button{
   padding: 7px 65px;
   border-radius: 25px;
   background: none;
@@ -1626,8 +1625,9 @@ i.fas.fa-paperclip{
   outline:medium none;
 }
 .share-story-button{
-  background: #ffc107;
+  background: linear-gradient(to right, #f5ab29, #f6c343);
   padding:7px 115px;
+  border-radius: 25px;
   color:#fff
 }
 @media(max-width:767.9px){

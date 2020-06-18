@@ -3,12 +3,14 @@
 
 <div class="my-custom-class">
 	<div class="container share_story_container pt-60">
-        <div class="row bg-white">
-	    <div class="d-flex flex-column mb-2 mt-2 col-lg-12">
-            <div class="share_story">
+  <div class="row bg-white">
+	    <div class="d-flex flex-column col-lg-12 mb-5">
+            <div class="share_story d-flex justify-content-between">
                 <b class="story_feed"><i class="fas fa-arrow-left"></i>&nbsp;My Groups</b>
-            </div>
-            <p class="mt-3 pl-4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+            <div class="">
+              <button type="button" class="btn btn-warning gradient-button" data-target="#invitemember" data-toggle="modal">Invite New Member</button>
+            </div></div>
+            
         </div> 
         
         <div class="col-lg-12">
@@ -31,17 +33,17 @@
               <div class="img_align d-flex">
                <div class="circlebg rounded-circle">
                     <div class="circle">
-                      <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="bg-img" />
+                      <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="bg-img">
                     </div>
                </div>
                <div class="newgroup list">class 3 Friends</div>
                <div class="group">
-                 <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="member"/>
-                 <img src="assets/four.jpg" alt="member"/>
-                 <img src="assets/how_to_work_1.jpg" alt="member"/>
-                 <img src="assets/how_to_work_2.jpg" alt="member"/>
-                 <img src="assets/how_to_work_3.jpg" alt="member"/>
-                 <img src="assets/how_to_work_4.jpg" alt="member"/>
+                 <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="member">
+                 <img src="assets/four.jpg" alt="member">
+                 <img src="assets/how_to_work_1.jpg" alt="member">
+                 <img src="assets/how_to_work_2.jpg" alt="member">
+                 <img src="assets/how_to_work_3.jpg" alt="member">
+                 <img src="assets/how_to_work_4.jpg" alt="member">
                </div>
                
               </div>
@@ -53,7 +55,7 @@
               <div class="img_align d-flex">
                <div class="circlebg rounded-circle">
                     <div class="circle">
-                      <img src="assets/default-profile.png" alt="bg-img" />
+                      <img src="assets/default-profile.png" alt="bg-img">
                     </div>
                </div>
                <div class="newgroup list">class 3 Friends</div>
@@ -71,12 +73,12 @@
                 </div>
 
                <div class="group">
-                 <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="member"/>
-                 <img src="assets/four.jpg" alt="member"/>
-                 <img src="assets/how_to_work_1.jpg" alt="member"/>
-                 <img src="assets/how_to_work_2.jpg" alt="member"/>
-                 <img src="assets/how_to_work_3.jpg" alt="member"/>
-                 <img src="assets/how_to_work_4.jpg" alt="member"/>
+                 <img src="http://universitiesconnect.com/bongoswriters/images/nature.jpg" alt="member">
+                 <img src="assets/four.jpg" alt="member">
+                 <img src="assets/how_to_work_1.jpg" alt="member">
+                 <img src="assets/how_to_work_2.jpg" alt="member">
+                 <img src="assets/how_to_work_3.jpg" alt="member">
+                 <img src="assets/how_to_work_4.jpg" alt="member">
                </div>
                <div class="count">+2 more</div>
               </div>
@@ -89,12 +91,11 @@
            
         </div>
 
-            <div class="d-flex justify-content-between col-lg-12 mt-5 mb-5">
-              <button type="button" class="btn btn-warning invite-button" data-target="#invitemember" data-toggle="modal">Invite New Member</button>
-            </div> 
+             
 
         
         </div>
+    </div>
     </div>
 </div>
 
@@ -111,7 +112,7 @@
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Group Name <sup>*</sup></label>
-            <input type="text" class="" id="recipient-name" placeholder="Enter Group Name">
+            <input type="text" class="form-control" id="recipient-name" placeholder="Enter Group Name">
           </div>
 
           <div class="form-group members-select">
