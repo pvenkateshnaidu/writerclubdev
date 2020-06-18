@@ -6,7 +6,7 @@
         <div class="row bg-white">
 	    <div class="d-flex flex-column mb-2 mt-2 col-lg-12">
             <div class="share_story">
-                <b class="story_feed"><i class="fas fa-arrow-left"></i>&nbsp;My Groups</b>
+                <b class="story_feed"><i class="fas fa-arrow-left"></i>&nbsp;share story</b>
             </div>
             <p class="mt-3 pl-4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
         </div> 
@@ -91,6 +91,9 @@
 
             <div class="d-flex justify-content-between col-lg-12 mt-5 mb-5">
               <button type="button" class="btn btn-warning invite-button" data-target="#invitemember" data-toggle="modal">Invite New Member</button>
+
+              <button type="button" class="btn btn-warning share-story-button">Share</button>
+
             </div> 
 
         
@@ -111,7 +114,7 @@
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Group Name <sup>*</sup></label>
-            <input type="text" class="" id="recipient-name" placeholder="Enter Group Name">
+            <input type="text" class="form-control" id="recipient-name" placeholder="Enter Group Name">
           </div>
 
           <div class="form-group members-select">

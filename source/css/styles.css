@@ -1405,7 +1405,7 @@ text-decoration: none;
 background-repeat: repeat-y;
 border: 0px;
 outline: 0px;
-padding: 8px 30px;
+padding: 7px 30px;
 border: 1px solid #d0cfce;
 margin-right: 20px;
 
@@ -1604,13 +1604,31 @@ i.fas.fa-paperclip{
 }
 .gradient-button{
   background: linear-gradient(to right, #f5ab29, #f6c343);
-  padding: 10px 35px;
+  padding: 8px 35px;
   border-radius: 25px;
   color: #fff;
 }
 .my-custom-class,
 .my-custom-class label {
   color: #2b4368;
+}
+.invite-button,
+.share-story-button{
+  padding: 7px 65px;
+  border-radius: 25px;
+  background: none;
+  color: #ffc107;
+}
+.invite-button:hover,
+.invite-button:focus{
+  background:none;
+  color:#ffc107;
+  outline:medium none;
+}
+.share-story-button{
+  background: #ffc107;
+  padding:7px 115px;
+  color:#fff
 }
 @media(max-width:767.9px){
   .fdm{
@@ -1937,11 +1955,16 @@ figure.user-info.group {
   cursor: pointer;
 }
 .added-members{
-  margin-top:15px;
+  display: inline;
+  position: relative;
+  top: -1px;
 }
 .added-members .member {
   display: inline-block;
   /* width: auto; */
+}
+.form-control.space{
+  padding: 0px 0 0px 10px;
 }
 .added-members figure.user-info.group {
   padding: 0px 0;
@@ -1976,6 +1999,16 @@ figure.user-info.group {
   color: #98a4b5;
   line-height: 30px;
   z-index: 5;
+}
+input::-webkit-input-placeholder {
+  font-size: 14px !important;
+}
+.input-control{
+  border: transparent;
+    padding: 7px;
+}
+.input-control:focus{
+  outline: none;
 }
 @media (min-width: 576px){
   .groups-page .modal-dialog {
